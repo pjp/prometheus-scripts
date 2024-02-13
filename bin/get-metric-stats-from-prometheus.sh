@@ -1,5 +1,11 @@
 #!/usr/bin/bash
-
+#
+##############################################################
+# A script to calculate stats. for a metric in Prometheus
+#
+# Calculate the average and display the maximum and minimum values.
+#
+##############################################################
 if [ $# -lt 3 ]
 then
    echo "ERROR: Too few parameters" >&2
@@ -8,10 +14,11 @@ then
    exit 1
 fi
 
-METRIC="$1"
-RANGE="$2"
-LABEL="$3"
-DIVIDER="$4"
+METRIC="$1"   # The Prometheus metric to retrieve.
+RANGE="$2"    # The time range to retrieve.
+LABEL="$3"    # The text to display for the stats.
+DIVIDER="$4"  # The (optional) divider to apply to the values retrieved.
+              # Useful to reduce large number e.g. bits/s to Mb/s (use 1000000)
 
 echo "########################"
 echo "# Stats. of ${LABEL}."
