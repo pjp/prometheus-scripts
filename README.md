@@ -6,8 +6,8 @@ For usage, execute the following command :-
 
 (PATH=bin:$PATH ; source prometheus-lib.sh ; prometheus-lib-help)
 
-After copying the scripts to a directory in the current PATH, there will
-be no need to set the PATH when source'ing prometheus-lib.sh
+After copying the scripts to a directory in the current **PATH**, there will
+be **no** need to set the PATH when source'ing prometheus-lib.sh
 
 ## Requirements:
 
@@ -19,4 +19,4 @@ export PROMETHEUS_API="${PROMETHEUS_API:-http://localhost:9090/api/v1}"
 
 and it can be overridden on the command line line e.g.
 
-export PROMETHEUS_API="http://somewhere-else:9090/api/vi" ; source prometheus-lib.sh ; prometheus-lib-get-latest-value node_thermal_zone_temp 1m
+export **PROMETHEUS_API**="http://somewhere-else:9090/api/vi" ; source prometheus-lib.sh ; prometheus-lib-get-latest-value node_thermal_zone_temp 1m
