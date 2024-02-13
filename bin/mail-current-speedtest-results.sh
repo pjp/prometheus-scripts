@@ -6,6 +6,8 @@ SENDER=pi-speed-mon@pearceful.net
 SPEED_FILE="/tmp/speed.txt"
 TMPFILE=$(/bin/mktemp)
 
+export PATH=$HOME/bin:$PATH
+
 # Any timecrage overrides ?
 if [ -z "$RANGE" ]
 then
