@@ -24,21 +24,22 @@ export **PROMETHEUS_API**="http://somewhere-else:9090/api/vi" ; source prometheu
 
 ### Mailer ###
 ssmtp is the mail client version :-
-sSMTP 2.64 (Not sendmail at all)
+
+    sSMTP 2.64 (Not sendmail at all)
 
 
 ## Hardware Platform Tested On ###
 
-Raspbery Pi 4B 
+    Raspbery Pi 4B 
 
 ## Operating System Tested On ##
 
-PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
-NAME="Debian GNU/Linux"
-VERSION_ID="11"
-VERSION="11 (bullseye)"
-VERSION_CODENAME=bullseye
-ID=debian
-HOME_URL="https://www.debian.org/"
-SUPPORT_URL="https://www.debian.org/support"
-BUG_REPORT_URL="https://bugs.debian.org/"
+    PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+    NAME="Debian GNU/Linux"
+    VERSION_ID="11"
+    VERSION="11 (bullseye)"
+    VERSION_CODENAME=bullseye
+    ID=debian
+    HOME_URL="https://www.debian.org/"
+    SUPPORT_URL="https://www.debian.org/support"
+    BUG_REPORT_URL="https://bugs.debian.org/"
