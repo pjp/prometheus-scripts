@@ -18,6 +18,6 @@ echo "# Stats. of ${LABEL}."
 echo "# over the last ${RANGE}."
 echo "########################"
 
-source $HOME/bin/prometheus-lib.sh
+source prometheus-lib.sh
 
 prometheus-lib-get-stats-from-list "$(prometheus-lib-get-history-as-list $METRIC ${RANGE} ${DIVIDER})" "$LABEL"

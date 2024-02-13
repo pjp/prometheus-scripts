@@ -21,22 +21,22 @@ export PROMETHEUS_API="${PROMETHEUS_API:-http://localhost:9090/api/v1}"
 #
 function prometheus-lib-help() {
 #################
-   echo -e "Example usage of functions in this library :-\n\n"
+   echo -e "Example usage of functions in this library, note the use of a sub-shell () to preserve the current envionment.\n\n"
 
-   echo "(source ~/bin/$PROMETHEUS_IAM ; prometheus-lib-help)"
+   echo "(source $PROMETHEUS_IAM ; prometheus-lib-help)"
    echo ""
-   echo "(source ~/bin/$PROMETHEUS_IAM ; prometheus-lib-get-latest-value node_thermal_zone_temp 1m)"
-   echo "(source ~/bin/$PROMETHEUS_IAM ; prometheus-lib-get-history-as-list node_thermal_zone_temp 1m)"
-   echo "(source ~/bin/$PROMETHEUS_IAM ; prometheus-lib-get-stats-from-list \"\$(prometheus-lib-get-history-as-list node_thermal_zone_temp 1h)\" "History")"
+   echo "(source $PROMETHEUS_IAM ; prometheus-lib-get-latest-value node_thermal_zone_temp 1m)"
+   echo "(source $PROMETHEUS_IAM ; prometheus-lib-get-history-as-list node_thermal_zone_temp 1m)"
+   echo "(source $PROMETHEUS_IAM ; prometheus-lib-get-stats-from-list \"\$(prometheus-lib-get-history-as-list node_thermal_zone_temp 1h)\" "History")"
    echo ""
    echo ""
    echo "For the following examples, we need to massage the output to Mb/s using awk."
    echo "Since the upload/download speed is only captured once an hour, we need to go back a"
    echo "few hours."
    echo ""
-   echo "(source ~/bin/$PROMETHEUS_IAM ; prometheus-lib-get-latest-value speedtest_download_bits_per_second 1h | awk '{printf \"%4.0f\\n\", \$1/1000000}')"
-   echo "(source ~/bin/$PROMETHEUS_IAM ; prometheus-lib-get-history-as-list speedtest_download_bits_per_second 6h | awk '{printf \"%4.0f\\n\", \$1/1000000}')"
-   echo "(source ~/bin/$PROMETHEUS_IAM ; prometheus-lib-get-stats-from-list \"\$(prometheus-lib-get-history-as-list speedtest_download_bits_per_second 6h | awk '{printf \"%4.0f\\n\", \$1/1000000}')\" \"History\")"
+   echo "(source $PROMETHEUS_IAM ; prometheus-lib-get-latest-value speedtest_download_bits_per_second 1h | awk '{printf \"%4.0f\\n\", \$1/1000000}')"
+   echo "(source $PROMETHEUS_IAM ; prometheus-lib-get-history-as-list speedtest_download_bits_per_second 6h | awk '{printf \"%4.0f\\n\", \$1/1000000}')"
+   echo "(source $PROMETHEUS_IAM ; prometheus-lib-get-stats-from-list \"\$(prometheus-lib-get-history-as-list speedtest_download_bits_per_second 6h | awk '{printf \"%4.0f\\n\", \$1/1000000}')\" \"History\")"
 }
 
 #################
