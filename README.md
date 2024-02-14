@@ -12,7 +12,7 @@ be **no** need to set the PATH when source'ing prometheus-lib.sh
 ## Requirements:
 
 ### Prometheus ###
-A Prometheus databaase instance running, note that all the examples
+A Prometheus database instance running, note that all the examples
 assume there is one running on the local server at port 9090, see 
 this line in prometheus-lib.sh 
 
@@ -23,10 +23,13 @@ and it can be overridden on the command line line e.g.
 export **PROMETHEUS_API**="http://somewhere-else:9090/api/vi" ; source prometheus-lib.sh ; prometheus-lib-get-latest-value node_thermal_zone_temp 1m
 
 ### Mailer ###
-ssmtp is the mail client version :-
+    ssmtp
 
-    sSMTP 2.64 (Not sendmail at all)
+### URL Retrieval ###
+    curl
 
+### JSON Parser ###
+    jq
 
 ## Hardware Platform Tested On ###
 
