@@ -2,7 +2,8 @@
 ## Description
 Bash scripts to extract values from a Prometheus database
 
-For usage, execute the following command :-
+For usage, execute the following UNIX command from the top level
+directory of this git repo. :-
 
 (PATH=bin:$PATH ; source prometheus-lib.sh ; prometheus-lib-help)
 
