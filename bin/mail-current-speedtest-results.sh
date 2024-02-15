@@ -3,7 +3,6 @@
 RECIPIENTNAME="Paul Pearce"
 RECIPIENTADDR=paul@pearceful.net
 SENDER=pi-speed-mon@pearceful.net
-SPEED_FILE="/tmp/speed.txt"
 TMPFILE=$(/bin/mktemp)
 
 export PATH=$HOME/bin:$PATH
