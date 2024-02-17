@@ -15,7 +15,12 @@ fi
 
 echo "To: \"$RECIPIENTNAME\" $RECIPIENTADDR" > $TMPFILE
 echo "From: $SENDER" >> $TMPFILE
-echo "Subject: Prometheus Stats from $(hostname -I  | cut -d' ' -f 1)" >> $TMPFILE
+echo "Subject: Prometheus Stats from $(hostname)" >> $TMPFILE
+
+echo "###################" >> $TMPFILE
+echo "IP $(hostname -I | cut -d' ' -f 1)" >> $TMPFILE
+echo "###################" >> $TMPFILE
+echo "#====================================" >> $TMPFILE
 
 echo "###################" >> $TMPFILE
 echo "Current speeds Mb/s" >> $TMPFILE
