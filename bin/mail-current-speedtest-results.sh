@@ -23,6 +23,16 @@ echo "###################" >> $TMPFILE
 echo "#====================================" >> $TMPFILE
 
 echo "###################" >> $TMPFILE
+echo "Uptime $(uptime)" >> $TMPFILE
+echo "###################" >> $TMPFILE
+echo "#====================================" >> $TMPFILE
+
+echo "###################" >> $TMPFILE
+echo -e "Current Memory Usage\n$(free -m)" >> $TMPFILE
+echo "###################" >> $TMPFILE
+echo "#====================================" >> $TMPFILE
+
+echo "###################" >> $TMPFILE
 echo "Current speeds Mb/s" >> $TMPFILE
 echo "###################" >> $TMPFILE
 cat /tmp/speed.txt >> $TMPFILE
