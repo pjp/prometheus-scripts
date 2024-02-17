@@ -17,6 +17,12 @@ echo "To: \"$RECIPIENTNAME\" $RECIPIENTADDR" > $TMPFILE
 echo "From: $SENDER" >> $TMPFILE
 echo "Subject: Prometheus Stats" >> $TMPFILE
 
+echo "###################" >> $TMPFILE
+echo "Current speeds Mb/s" >> $TMPFILE
+echo "###################" >> $TMPFILE
+cat /tmp/speed.txt >> $TMPFILE
+echo "#====================================" >> $TMPFILE
+
 get-metric-stats-from-prometheus.sh speedtest_download_bits_per_second $RANGE "speedtest_download Mb/s" 1000000 >> $TMPFILE
 echo "#====================================" >> $TMPFILE
 
@@ -29,7 +35,7 @@ echo "#====================================" >> $TMPFILE
 get-metric-stats-from-prometheus.sh node_memory_Active_bytes $RANGE "Active memory Mb" 1000000 >> $TMPFILE
 echo "#====================================" >> $TMPFILE
 
-get-metric-stats-from-prometheus.sh node_load5 $RANGE "5 minute load" >> $TMPFILE
+get-metric-stats-from-prometheus.sh node_load15 $RANGE "15 minute load" >> $TMPFILE
 echo "#====================================" >> $TMPFILE
 
 cat $TMPFILE | /usr/sbin/ssmtp paul@pearceful.net
