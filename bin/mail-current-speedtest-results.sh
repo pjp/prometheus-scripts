@@ -18,6 +18,12 @@ echo "From: $SENDER" >> $TMPFILE
 echo "Subject: Prometheus Stats from $(hostname)" >> $TMPFILE
 
 echo "###################" >> $TMPFILE
+echo "Current speeds Mb/s" >> $TMPFILE
+echo "###################" >> $TMPFILE
+cat /tmp/speed.txt >> $TMPFILE
+echo "#====================================" >> $TMPFILE
+
+echo "###################" >> $TMPFILE
 echo "IP $(hostname -I | cut -d' ' -f 1-4)" >> $TMPFILE
 echo "###################" >> $TMPFILE
 echo "#====================================" >> $TMPFILE
@@ -35,12 +41,6 @@ echo "#====================================" >> $TMPFILE
 echo "###################" >> $TMPFILE
 echo -e "Current Memory Usage\n$(free -m)" >> $TMPFILE
 echo "###################" >> $TMPFILE
-echo "#====================================" >> $TMPFILE
-
-echo "###################" >> $TMPFILE
-echo "Current speeds Mb/s" >> $TMPFILE
-echo "###################" >> $TMPFILE
-cat /tmp/speed.txt >> $TMPFILE
 echo "#====================================" >> $TMPFILE
 
 get-metric-stats-from-prometheus.sh speedtest_download_bits_per_second $RANGE "speedtest_download Mb/s" 1000000 >> $TMPFILE
