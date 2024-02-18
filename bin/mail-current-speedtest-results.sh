@@ -18,7 +18,7 @@ echo "From: $SENDER" >> $TMPFILE
 echo "Subject: Prometheus Stats from $(hostname)" >> $TMPFILE
 
 echo "###################" >> $TMPFILE
-echo "IP $(hostname -I | cut -d' ' -f 1)" >> $TMPFILE
+echo "IP $(hostname -I | cut -d' ' -f 1-4)" >> $TMPFILE
 echo "###################" >> $TMPFILE
 echo "#====================================" >> $TMPFILE
 
