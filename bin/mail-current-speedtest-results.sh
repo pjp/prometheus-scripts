@@ -23,6 +23,11 @@ echo "###################" >> $TMPFILE
 echo "#====================================" >> $TMPFILE
 
 echo "###################" >> $TMPFILE
+echo "$(df -H /)" >> $TMPFILE
+echo "###################" >> $TMPFILE
+echo "#====================================" >> $TMPFILE
+
+echo "###################" >> $TMPFILE
 echo "Uptime $(uptime)" >> $TMPFILE
 echo "###################" >> $TMPFILE
 echo "#====================================" >> $TMPFILE
