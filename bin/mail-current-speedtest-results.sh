@@ -13,12 +13,13 @@ then
    RANGE="${1:-6h}"
 fi
 
-echo "To: \"$RECIPIENTNAME\" $RECIPIENTADDR" > $TMPFILE
-echo "From: $SENDER" >> $TMPFILE
-echo "Subject: Prometheus Stats from $(hostname)" >> $TMPFILE
+# echo "To: \"$RECIPIENTNAME\" $RECIPIENTADDR" > $TMPFILE
+# echo "From: $SENDER" >> $TMPFILE
+# echo "Subject: Prometheus Stats from $(hostname)" >> $TMPFILE
 
-echo "###################" >> $TMPFILE
-echo "Current speeds Mb/s" >> $TMPFILE
+#echo "###################" >> $TMPFILE
+
+echo "Current speeds Mb/s"  > $TMPFILE
 echo "###################" >> $TMPFILE
 cat /tmp/speed.txt >> $TMPFILE
 echo "#====================================" >> $TMPFILE
@@ -58,6 +59,8 @@ echo "#====================================" >> $TMPFILE
 get-metric-stats-from-prometheus.sh node_load15 $RANGE "15 minute load" >> $TMPFILE
 echo "#====================================" >> $TMPFILE
 
-cat $TMPFILE | /usr/sbin/ssmtp paul@pearceful.net
+#cat $TMPFILE | /usr/sbin/ssmtp paul@pearceful.net
+
+DRY_RUN=0 mail-file.sh $TMPFILE "Prometheus Stats from $(hostname)" "$RECIPIENTADDR" "$RECIPIENTNAME"
 
 rm $TMPFILE
